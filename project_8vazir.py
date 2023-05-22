@@ -54,7 +54,6 @@ crossover=a.crossover(parent)
 print(crossover)
 print("***************************************")
 print("***************************************")
-print("***************************************")
 mutation = a.mutation(crossover)
 print(mutation)
 
