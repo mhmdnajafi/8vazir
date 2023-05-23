@@ -40,43 +40,74 @@ class Gentic():
     
     def cost(self,parent,crossover,mutation):
         data = parent+crossover+mutation
-        print('++++++++++++++++++','len data : ',len(data))
+        cost = list()
+        #print('++++++++++++++++++','len data : ',len(data))
         for i in data:
             for j in range(1,9):
                 if j in i:
                     counter = i.count(j)
                     if counter >1:
                        data.remove(i)
+                       cost.append(i)
                        break
-            print('++++++++++++++++++','len data : ',len(data))
+            #print('++++++++++++++++++','len data : ',len(data))
 
+        for answer in data:
+            for i in range(9):
+                for j in range(2,9):
+                    if i+j<8:
+                        if answer[i] - answer[i+j] == j:
+                            cost.append(answer)
+                            data.remove(answer)
+                        break
+                if answer not in data:
+                    break
+        data_uni=list()
+        for answer in data:
+            if answer not in data_uni:
+                data_uni.append(answer)
 
-
-        return data
+                        
+  
+                        
+        return cost,data_uni
                     
     
 #    def gentic():
     
 
 
-a=Gentic(30,0.8,0.3)
+a=Gentic(6,0.8,0.3)
 parent=a.generation()
 print(parent)
 print("***************************************")
 print("***************************************")
 print("***************************************")
-crossover=a.crossover(parent)
-print(crossover)
+while True:
+    crossover=a.crossover(parent)
+#    print(crossover)
+#    print("*    **************************************")
+#    print("***************************************")
+    mutation = a.mutation(crossover)
+#    print(mutation)
+
+#    print("***************************************")
+#   print("***************************************")
+    cost,parent=a.cost(parent,crossover,mutation)
+    if len(cost) == 0 :
+        break
+    else:
+        continue
+result =parent
+#uni = set(parent)
 print("***************************************")
 print("***************************************")
-mutation = a.mutation(crossover)
-print(mutation)
-
-print("***************************************")
-print("***************************************")
-
-a.cost(parent,crossover,mutation)
-
-
+#uni_asnswer = print(uni)
+uni = list()
+for answer in result:
+    if answer not in uni:
+        uni.append(answer)
+print('answer:',len(parent),'\n',result)
+print('uni:',len(uni),'\n',uni)
 
 
