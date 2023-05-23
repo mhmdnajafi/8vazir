@@ -38,13 +38,28 @@ class Gentic():
             mutationlist.append(i)
         return mutationlist
     
-#    def cost(self):
+    def cost(self,parent,crossover,mutation):
+        data = parent+crossover+mutation
+        print('++++++++++++++++++','len data : ',len(data))
+        for i in data:
+            for j in range(1,9):
+                if j in i:
+                    counter = i.count(j)
+                    if counter >1:
+                       data.remove(i)
+                       break
+            print('++++++++++++++++++','len data : ',len(data))
+
+
+
+        return data
+                    
     
 #    def gentic():
     
 
 
-a=Gentic(10,0.8,0.3)
+a=Gentic(30,0.8,0.3)
 parent=a.generation()
 print(parent)
 print("***************************************")
@@ -56,6 +71,11 @@ print("***************************************")
 print("***************************************")
 mutation = a.mutation(crossover)
 print(mutation)
+
+print("***************************************")
+print("***************************************")
+
+a.cost(parent,crossover,mutation)
 
 
 
