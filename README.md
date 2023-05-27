@@ -1,2 +1,2 @@
-# 8vazir
-پروژه 8 وزیر 
+# N-QUEEN Project
+
