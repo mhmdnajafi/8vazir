@@ -1,0 +1,8 @@
+solution  1 Queen (1 * 1)
+ Information:   
+ 1-Population:  500 
+ 2-Crossover:  0.8 
+ 3-Mutation :  0.2 
+ 4-Run:  300
+
+ [1]

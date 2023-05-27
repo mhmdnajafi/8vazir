@@ -1,0 +1,9 @@
+solution  4 Queen (4 * 4)
+ Information:   
+ 1-Population:  500 
+ 2-Crossover:  0.8 
+ 3-Mutation :  0.2 
+ 4-Run:  500
+
+ [3, 1, 4, 2]
+[2, 4, 1, 3]

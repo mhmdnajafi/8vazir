@@ -1,0 +1,8 @@
+solution  3 Queen (3 * 3)
+ Information:   
+ 1-Population:  500 
+ 2-Crossover:  0.8 
+ 3-Mutation :  0.2 
+ 4-Run:  500
+
+ 
